@@ -51,6 +51,7 @@ class SeriesController extends Controller
             );
             $email->subject = 'Nova Série Adicionada';
             \Illuminate\Support\Facades\Mail::to($user)->send($email);
+            sleep(5);
         }
 
         $request->session()
