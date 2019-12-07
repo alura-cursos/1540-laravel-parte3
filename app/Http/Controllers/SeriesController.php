@@ -50,8 +50,8 @@ class SeriesController extends Controller
                 $request->ep_por_temporada
             );
             $email->subject = 'Nova Série Adicionada';
-            \Illuminate\Support\Facades\Mail::to($user)->send($email);
-            sleep(5);
+            \Illuminate\Support\Facades\Mail::to($user)->queue($email);
+            //sleep(5);
         }
 
         $request->session()
